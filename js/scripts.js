@@ -1,20 +1,21 @@
 $(document).ready(function() {
-  $("button#hello").click(function() {
-    $("ul#user").prepend("<li>Hello!</li>");
-    $("ul#webpage").prepend("<li>Why hello there!</li>");
-    $("li").click(function() {
-      $(this).remove();
-      //$('li').css('background-color', 'green');
-    });
-  });
+  $("#blanks form").submit(function(event) {
+  console.log(event);
+  var person1Input = $("input#person1").val();
+  var person2Input = $("input#person2").val();
+  var animalInput= $("input#animal").val();
+  var exclamationInput = $("input#exclamation").val();
+  var verbInput = $("input#verb").val();
+  var nounInput = $("input#noun").val();
 
-  $("button#goodbye").click(function() {
-    $("ul#user").prepend("<li>Goodbye!</li>");
-    $("ul#webpage").prepend("<li>Goodbye, dear user!</li>");
-  });
+  $(".person1").text(person1Input);
+  $(".person2").text(person2Input);
+  $(".animal").text(animalInput);
+  $(".exclamation").text(exclamationInput);
+  $(".verb").text(verbInput);
+  $(".noun").text(nounInput);
 
-  $("button#stop").click(function() {
-    $("ul#user").prepend("<li>Stop copying me!</li>");
-    $("ul#webpage").prepend("<li>Resistance is futile. You will be assimilated.</li>");
+    $("#story").show();
+    event.preventDefault();
   });
 });
